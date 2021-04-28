@@ -1,0 +1,36 @@
+{
+  "name": "vue-learn-repo-koa",
+  "version": "1.0.0",
+  "description": "vue-learn-repo-koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env ts-node ./src/index.ts",
+    "build": "tsc",
+    "hot-dev": "cross-env nodemon --watch 'src/' -e ts --exec 'ts-node' ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/billmian/vue-learn-repo-koa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/billmian/vue-learn-repo-koa/issues"
+  },
+  "homepage": "https://github.com/billmian/vue-learn-repo-koa#readme",
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-router": "^7.4.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.1",
+    "@types/koa-router": "^7.4.2",
+    "cross-env": "^7.0.3",
+    "sequelize-cli": "^6.2.0"
+  }
+}
