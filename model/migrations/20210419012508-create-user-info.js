@@ -22,6 +22,9 @@ module.exports = {
       user_type: {
         type: Sequelize.STRING,
       },
+      user_balance: {
+        type: Sequelize.INTEGER,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {

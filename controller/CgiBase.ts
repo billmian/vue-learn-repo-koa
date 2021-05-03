@@ -1,17 +1,12 @@
 export default class CgiBase {
-  dispatch(ctx: any) {
+  async dispatch(ctx: any) {
     const param = ctx.params;
-    console.log(
-      "🚀 ~ file: CgiBase.ts ~ line 4 ~ CgiBase ~ dispath ~ param",
-      param,
-      this
-    );
     const { name } = param;
     if (this[name]) {
-      this[name](ctx);
+      await this[name](ctx);
     } else {
-      ctx.response.body = "route node found";
-      ctx.response.code = 200;
+      ctx.response.body = { code: 400, data: "route node found" };
+      ctx.response.status = 200;
     }
   }
 }

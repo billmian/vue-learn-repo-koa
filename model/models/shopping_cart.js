@@ -13,13 +13,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   shopping_cart.init(
     {
-      sid: DataTypes.INTEGER,
+      sid: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
       pid: DataTypes.INTEGER,
       product_name: DataTypes.STRING,
       product_nums: DataTypes.INTEGER,
       product_specification: DataTypes.STRING,
     },
     {
+      timestamps: false,
       sequelize,
       modelName: "shopping_cart",
       freezeTableName: true,

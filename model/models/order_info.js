@@ -13,14 +13,19 @@ module.exports = (sequelize, DataTypes) => {
   }
   order_info.init(
     {
-      oid: DataTypes.INTEGER,
+      oid: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
       uid: DataTypes.INTEGER,
       rid: DataTypes.INTEGER,
-      sid: DataTypes.INTEGER,
+      pid: DataTypes.INTEGER,
       order_time: DataTypes.STRING,
       state: DataTypes.STRING,
+      price: DataTypes.INTEGER,
     },
     {
+      timestamps: false,
       sequelize,
       modelName: "order_info",
       freezeTableName: true,

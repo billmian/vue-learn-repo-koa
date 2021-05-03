@@ -19,7 +19,7 @@ module.exports = {
       detail: {
         type: Sequelize.STRING,
       },
-      product_specifition: {
+      restaurant_name: {
         type: Sequelize.STRING,
       },
     });

@@ -13,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   receiving_info.init(
     {
-      rid: DataTypes.INTEGER,
+      rid: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
       uid: DataTypes.INTEGER,
       province: DataTypes.STRING,
       city: DataTypes.STRING,
@@ -22,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       consi_tel: DataTypes.STRING,
     },
     {
+      timestamps: false,
       sequelize,
       modelName: "receiving_info",
       freezeTableName: true,

@@ -1,8 +1,8 @@
 import CgiBase from "../CgiBase";
 import model from "../..//model/models/index";
 
-class OrderCgi extends CgiBase {
-  async addOrder(ctx: any, app: any) {
+class CartCgi extends CgiBase {
+  async addCart(ctx: any, app: any) {
     const { order_info: orderTable, user_info: userTable } = model;
     const { uid, finalPrice, pid, orderTime } = ctx.request.body;
     const userInfo = await userTable.findOne({
@@ -37,7 +37,7 @@ class OrderCgi extends CgiBase {
     ctx.response.body = {};
     ctx.response.status = 200;
   }
-  async getOrderList(ctx: any) {
+  async getCartList(ctx: any) {
     const { order_info: orderTable, product_info: productTable } = model;
     const { uid } = ctx.request.body;
     const result = await orderTable.findAll({
@@ -60,5 +60,5 @@ class OrderCgi extends CgiBase {
     ctx.response.body = result;
   }
 }
-const orderCgi = new OrderCgi();
-export default orderCgi.dispatch.bind(orderCgi);
+const cartCgi = new CartCgi();
+export default cartCgi.dispatch.bind(cartCgi);

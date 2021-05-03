@@ -13,7 +13,7 @@ module.exports = {
       rid: {
         type: Sequelize.INTEGER,
       },
-      sid: {
+      pid: {
         type: Sequelize.INTEGER,
       },
       order_time: {
@@ -21,6 +21,9 @@ module.exports = {
       },
       state: {
         type: Sequelize.STRING,
+      },
+      price: {
+        type: Sequelize.INTEGER,
       },
     });
   },

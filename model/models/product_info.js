@@ -13,14 +13,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   product_info.init(
     {
-      pid: DataTypes.INTEGER,
+      pid: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
       product_name: DataTypes.STRING,
       price: DataTypes.INTEGER,
       picture: DataTypes.STRING,
       detail: DataTypes.STRING,
-      product_specifition: DataTypes.STRING,
+      restaurant_name: DataTypes.STRING,
     },
     {
+      timestamps: false,
       sequelize,
       modelName: "product_info",
       freezeTableName: true,

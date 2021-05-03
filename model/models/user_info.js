@@ -13,12 +13,16 @@ module.exports = (sequelize, DataTypes) => {
   }
   user_info.init(
     {
-      uid: DataTypes.INTEGER,
+      uid: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
       user_name: DataTypes.STRING,
       user_account: DataTypes.STRING,
       user_password: DataTypes.STRING,
       user_avatar: DataTypes.STRING,
       user_type: DataTypes.STRING,
+      user_balance: DataTypes.INTEGER,
     },
     {
       timestamps: false,
